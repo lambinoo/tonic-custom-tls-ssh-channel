@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package echo;
+
+message EchoRequest {
+  string message = 1;
+}
+
+message EchoResponse {
+  string message = 1;
+}
+
+service EchoServices {
+  rpc Ping(EchoRequest) returns (EchoResponse) {}
+}
+
+service PublicEchoServices {
+  rpc Ping(EchoRequest) returns (EchoResponse) {}
+}
